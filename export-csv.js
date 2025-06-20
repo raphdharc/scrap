@@ -59,9 +59,9 @@ const projects = filtered.map(item => ({
   location: item['IhaleYeri_location'] || '',
   datetime: item['IhaleYeri_datetime'] || '',
   ilk: item['İlk_parsed'],
-  estimate: item['YaklasikMaliyet_parsed'],
-  lowest_bid: item['EnDusukTeklif_parsed'],
-  highest_bid: item['EnYuksekTeklif_parsed'],
+  estimate: item['Yaklaşık Maliyet_parsed'],
+  lowest_bid: item['En Düşük Teklif_parsed'],
+  highest_bid: item['En Yüksek Teklif_parsed'],
   pct_lowest_vs_estimate: item['pct_lowest_vs_estimate'],
   pct_bid_spread: item['pct_bid_spread']
 }));
