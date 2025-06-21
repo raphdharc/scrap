@@ -9,7 +9,7 @@ a.	Recupere toute les infos nécessaires par IKN
 b.	Necessite: ekap-hatay-2023.json
 c.	Output: ekap-results.json
 3.	Run clean-ekap.js
-a.	Format la data proprement (prix etc) + ajoute des infos (ex écart % entre plus haut et plus bas offre)
+a.	Format la data proprement (prix etc)
 b.	Necessite: ekap-results.json
 c.	Output: ekap-cleaned.json
 4.	Run Filter-ekap.js
