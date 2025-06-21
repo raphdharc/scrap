@@ -1,0 +1,8 @@
+node_modules/
+*.log
+ekap-results.json
+ekap-cleaned.json
+ekap-filtered.json
+neo4j_csv/
+*.csv
+
