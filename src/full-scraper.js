@@ -63,7 +63,7 @@ async function applyFilters(page, config) {
   await waitForDynamicContent(page);
 }
 
-async function scrapeTabData(frame, tabSelector, tableSelector, timeout = 10000) {
+async function scrapeTabData(frame, tabSelector, tableSelector, timeout = 20000) {
   console.log(`📑 Extracting data from tab ${tabSelector}...`);
   try {
     // Special handling for the contract tab (Sözleşme) which may not exist
@@ -127,7 +127,7 @@ async function scrapeIlanPreviewFromModal(page) {
   const frame = await iframeHandle.contentFrame();
   if (!frame) throw new Error('❌ Could not access iframe content');
 
-  await frame.waitForSelector('#ilanOnizleme .ilanTabloStil', { timeout: 10000 });
+  await frame.waitForSelector('#ilanOnizleme .ilanTabloStil', { timeout: 30000 });
   const rows = await frame.$$eval('#ilanOnizleme .ilanTabloStil > tbody > tr', trs =>
     trs.map(tr => Array.from(tr.querySelectorAll('td')).map(td => td.textContent.trim()).filter(Boolean))
        .filter(row => row.length > 0)
@@ -183,7 +183,7 @@ async function runFullScraper(iknList, config) {
 
       const frameHandle = await page.waitForSelector('iframe[src*="BirBakistaIhale.aspx"]', { timeout: 5000 });
       const frame = await frameHandle.contentFrame();
-      await frame.waitForLoadState('networkidle');
+      await frame.waitForLoadState('networkidle',{ timeout: 5000 });
 
       const ihale = await scrapeTabData(frame, 'a[href="#tabIhaleBilgi"]', 'section#tabIhaleBilgi table.bilgi tr');
       const idare = await scrapeTabData(frame, 'a[href="#tabIdareBilgi"]', 'section#tabIdareBilgi table.bilgi tr');
