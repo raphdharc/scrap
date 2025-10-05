@@ -1,10 +1,11 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "description": "Run Turkey hatay 2023 construction script scraper",
-  "main": "clean-ekap.js",
+  "description": "A scraper for the Turkish Public Procurement Platform (EKAP).",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/raphdharc/scrap/issues"
   },
-  "homepage": "https://github.com/raphdharc/scrap#readme"
+  "homepage": "https://github.com/raphdharc/scrap#readme",
+  "dependencies": {
+    "2captcha": "^3.0.5-2",
+    "csv-stringify": "^6.6.0",
+    "playwright": "^1.55.1"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
 }
