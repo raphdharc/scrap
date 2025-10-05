@@ -1,0 +1,14 @@
+{
+  "search": {
+    "ihaleTuru": 2,
+    "ilId": 31,
+    "iknYil": 2023,
+    "ilLabel": "HATAY"
+  },
+  "headless": true,
+  "dataDir": "data",
+  "captcha": {
+    "autoSolve": false,
+    "apiKey": "YOUR_API_KEY_HERE"
+  }
+}
